@@ -195,8 +195,8 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.8"
-content-hash = "c010e28eb23872e9b6deb5511b122e9806f3bd5e38cb6ca0f817a026e53fe1c6"
+python-versions = ">=3.8"
+content-hash = "4b07ca2f72df51cc0bbd01f445752d56065d995b266218d386afef0c0e7d4272"
 
 [metadata.files]
 contourpy = []
