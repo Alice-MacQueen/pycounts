@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from collections import Counter
 
 
 def plot_words(word_counts, n=10):
@@ -7,7 +8,7 @@ def plot_words(word_counts, n=10):
     Parameters
     ----------
     word_counts : collections.Counter
-        Counter object of word counts.
+        A Counter object of word counts.
     n : int, optional
         Plot the top n words. By default, 10.
 
@@ -18,11 +19,13 @@ def plot_words(word_counts, n=10):
 
     Examples
     --------
-    >>> from pycounts.pycounts import count_words
-    >>> from pycounts.plotting import plot_words
+    >>> from pycounts_macqueen.pycounts import count_words
+    >>> from pycounts_macqueen.plotting import plot_words
     >>> counts = count_words("text.txt")
     >>> plot_words(counts)
     """
+    if not isinstance(word_counts, Counter):
+        raise TypeError("'word_counts' should be of type 'Counter'.")
     top_n_words = word_counts.most_common(n)
     word, count = zip(*top_n_words)
     fig = plt.bar(range(n), count)
