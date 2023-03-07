@@ -1,4 +1,4 @@
-# pycounts
+# pycounts_macqueen
 
 Calculate word counts in a text file
 
