@@ -47,12 +47,12 @@ jobs:
     # Define job steps
     steps:
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: "3.9"
 
       - name: Check-out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -69,7 +69,7 @@ jobs:
         run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
-            poetry run semantic-release publish
+            poetry run semantic-release publish -D version_source=tag
 
       - name: Publish to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
